@@ -1,0 +1,17 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> test:browser
+> node tests/browser.mjs
+
+PASS fetch JSON -> upstream parse -> rendered fixture title and thumbnail
+PASS XHR text handlers see prepared data and ordered final events
+PASS XHR json response type
+PASS reused XHR drops prepared response from previous request
+PASS rapid navigation fixture renders current requested ID
+PASS fetch clone and text consumption
+PASS master off retains original at transport and render
+PASS unrelated HTTP request retains body
+PASS real Image load and failure fallback
+PASS actual image preload and rendered fixture use correct video frame
+PASS transport installation is idempotent
+11 browser fixture integration tests passed. Chromium 141.0.7390.37. Live YouTube/Shield not tested.

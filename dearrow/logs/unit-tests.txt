@@ -1,0 +1,46 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> test
+> node --test tests/*.test.mjs
+
+✔ regression: old guard always skips tile and lockup (1.017995ms)
+✔ server order wins over highest vote (0.167712ms)
+✔ original winner is respected; do not choose second entry (0.111077ms)
+✔ negative votes rejected unless locked (0.094242ms)
+✔ zero timestamp accepted (0.19215ms)
+✔ invalid timestamps rejected (0.207212ms)
+✔ empty response and malformed lists are safe (0.605983ms)
+✔ tile: title and verified image applied (0.906066ms)
+✔ tile: missing submissions retain original (0.598352ms)
+✔ lockup: title and verified image applied (0.612023ms)
+✔ lockup: missing submissions retain original (0.332702ms)
+✔ image failures retain original while title is replaced (4.091911ms)
+✔ master off makes no requests (0.245009ms)
+✔ titles and thumbnails independently controlled (2.343214ms)
+✔ settings disabled during response stop application (0.290659ms)
+✔ late results never mutate delivered models (22.231271ms)
+✔ partial deadline retains completed replacements (11.310277ms)
+✔ video endpoint and content ID disagreement rejected (0.197698ms)
+✔ non-video lockups and arbitrary metadata ignored (0.120511ms)
+✔ recursive home/search/subscriptions/related/continuation traversal (0.669259ms)
+✔ runs titles and playback videoDetails supported (0.170267ms)
+✔ cache, concurrent deduplication and prefix batching (6.606292ms)
+✔ negative cache and expiry (0.409027ms)
+✔ successful cache expiry and clear (0.281895ms)
+✔ HTTP error and malformed JSON preserve originals (4.221956ms)
+✔ request timeout releases concurrency slot (8.240607ms)
+✔ body timeout is bounded (5.688444ms)
+✔ rate limit backs off other IDs (0.335225ms)
+✔ concurrency and cache size bounded (6.171863ms)
+✔ images deduplicated for repeated video cards (0.503229ms)
+✔ YouTube endpoint allowlist excludes media, login and third parties (0.50364ms)
+✔ native loader embeds exact reviewed bundle and scopes injection (13.705329ms)
+✔ package identity is separate and settings key remains compatible (0.295896ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 184.357985

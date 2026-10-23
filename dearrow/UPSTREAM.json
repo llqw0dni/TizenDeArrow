@@ -1,0 +1,11 @@
+{
+  "native_repository": "https://github.com/llqw0dni/TizenDeArrow",
+  "native_revision": "295b61e59a11716d0e2050a018b0ae7ac2b90c90",
+  "native_release_tag_revision": "9809b5aae6d820c852bc6cf7095304fb1c92f31a",
+  "native_release_tag": "v2.0.3",
+  "userscript_repository": "https://github.com/reisxd/TizenTube",
+  "userscript_revision": "f99945a84ff767bf14ad8c1146e8e3fd49a3d628",
+  "dearrow_reference_repository": "https://github.com/ajayyy/DeArrow",
+  "dearrow_reference_revision": "482cf997c91efcf226e1c7852db186cc29a75474",
+  "audit_date": "2026-10-23"
+}

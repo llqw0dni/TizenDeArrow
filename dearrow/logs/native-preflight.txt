@@ -1,0 +1,17 @@
+Free disk: 28.6 GiB; full Chromium build requires at least 100 GiB free
+gn: MISSING
+autoninja: MISSING
+gclient: MISSING
+node: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node
+npm: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npm
+java: /usr/bin/java
+BLOCKED:
+- insufficient disk for Chromium dependency checkout and build
+- missing gn
+- missing autoninja
+- missing gclient
+- missing synchronized dependency: build/config/android/config.gni
+- missing synchronized dependency: third_party/android_sdk/public
+- missing synchronized dependency: third_party/llvm-build/Release+Asserts/bin/clang
+
+Exit status: 2

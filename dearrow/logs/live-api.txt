@@ -1,0 +1,7 @@
+GET https://sponsor.ajay.app/api/branding/5f6b?fetchAll=true
+HTTP 200
+Elapsed 6.90s
+Titles 3
+Thumbnails 6
+First title [{"title": "Rick Astley - Never gonna give you up (official music video)", "original": false, "votes": 1, "locked": true, "UUID": "b68ad4b9-f4db-47d0-bf07-bf19308927d7"}]
+First thumbnail [{"timestamp": 3.92349, "original": false, "votes": 2, "locked": true, "UUID": "5a39ceec-99f3-4b16-b71f-8ac60e978d41"}]
