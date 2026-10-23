@@ -5,6 +5,7 @@
 import("//build/config/compiler/compiler.gni")
 
 blink_core_hot_sources_dom = [
+  "//dearrow/generated/userscript.h",
   "container_node.cc",
   "container_node.h",
   "document.cc",
