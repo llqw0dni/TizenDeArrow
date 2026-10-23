@@ -1,0 +1,69 @@
+name: DeArrow validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dearrow-fix
+    paths:
+      - dearrow/**
+      - .github/workflows/dearrow-validation.yml
+      - third_party/blink/renderer/core/dom/document.cc
+      - cobalt/android/BUILD.gn
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Download project source
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            dearrow
+            cobalt/android
+            third_party/blink/renderer/core/dom
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            dearrow/package-lock.json
+            dearrow/tizentube/mods/package-lock.json
+
+      - name: Install userscript dependencies
+        run: npm ci --prefix dearrow/tizentube/mods --ignore-scripts
+
+      - name: Build userscript
+        run: npm run build --prefix dearrow/tizentube/mods
+
+      - name: Generate embedded userscript
+        run: python3 dearrow/tools/embed-userscript.py
+
+      - name: Install test dependencies
+        run: npm ci --prefix dearrow --ignore-scripts
+
+      - name: Run unit tests
+        run: npm test --prefix dearrow
+
+      - name: Install Chromium for browser tests
+        run: npx --prefix dearrow playwright install --with-deps chromium
+
+      - name: Run browser integration tests
+        run: npm run test:browser --prefix dearrow
+
+      - name: Save validated userscript and documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: dearrow-validation-bundle
+          path: |
+            dearrow/tizentube/dist/userScript.js
+            dearrow/generated/userscript.h
+            dearrow/docs/
+          if-no-files-found: error
